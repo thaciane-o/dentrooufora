@@ -13,9 +13,14 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    
                     <div style="display: flex; flex-direction: row;">
                         <div class="card" style="width: 18rem;  margin-right: 10px;">
-                            <img src="..." class="card-img-top" alt="...">
+                            <img 
+                                src="https://intelectua.com.br/sites/default/files/styles/large/public/76815-voce-realmente-sabe-o-que-e-desenvolvimento-web-entregar-em-2203.jpg?itok=XU9FDXQJ" 
+                                class="card-img-top" 
+                                alt="Candidato"
+                            >
                             <div class="card-body">
                                 <h5 class="card-title">Cadastre candidato</h5>
                                 <p class="card-text">Aqui você vai cadastrar os candidados que vão participar das votações.</p>
@@ -23,7 +28,10 @@
                             </div>
                         </div>
                         <div class="card" style="width: 18rem; margin-right: 10px;">
-                            <img src="..." class="card-img-top" alt="...">
+                            <img 
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZbF0AbfYsOlBc76phvjnPS29C-vto_o3mwKmmFSIdHWNzjG9uU0l8RRHnNGHDsQz7S4o&usqp=CAU"
+                                class="card-img-top" 
+                                alt="Votação">
                             <div class="card-body">
                                 <h5 class="card-title">Cadastre votação</h5>
                                 <p class="card-text">Aqui você vai criar a votação que vai ocorrer.</p>
@@ -31,7 +39,10 @@
                             </div>
                         </div>
                         <div class="card" style="width: 18rem;">
-                            <img src="..." class="card-img-top" alt="...">
+                            <img 
+                                src="https://149504724.v2.pressablecdn.com/wp-content/uploads/2017/08/websites.jpg" 
+                                class="card-img-top" 
+                                alt="Categoria">
                             <div class="card-body">
                                 <h5 class="card-title">Cadastre categoria</h5>
                                 <p class="card-text">Aqui você vai criar as categorias que vão compor as votações.</p>

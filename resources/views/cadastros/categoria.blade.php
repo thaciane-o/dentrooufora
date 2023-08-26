@@ -11,8 +11,9 @@
                 <div class="card-body">
                     <form class="mt-3" method="POST">
                     @csrf
+                    
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" placeholder="Nome do categoria">
+                            <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do categoria">
                             <label for="floatingInput">Nome do categoria</label>
                         </div>
 

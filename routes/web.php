@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\CandidatoController;
+use App\Http\Controllers\VotacaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,11 +22,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home',             [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/candidato',        [App\Http\Controllers\CandidatoController::class, 'index'])->name('candidato');
+Route::get('/candidato',        [CandidatoController::class, 'create'])->name('candidato.create');
+Route::post('/candidato',       [CandidatoController::class, 'store'])->name('candidato.store');
 
-Route::get('/votacao', [App\Http\Controllers\VotacaoController::class, 'index'])->name('votacao');
+Route::get('/votacao',          [VotacaoController::class, 'create'])->name('votacao.create');
+Route::post('/votacao',         [VotacaoController::class, 'store'])->name('votacao.store');
 
-Route::get('/categoria',        [CategoriaController::class, 'index'])->name('categoria');
-Route::post('/categoria/store', [CategoriaController::class, 'store'])->name('store');
+Route::get('/categoria',        [CategoriaController::class, 'create'])->name('categoria.create');
+Route::post('/categoria',       [CategoriaController::class, 'store'])->name('categoria.store');
+
+Route::get('/votacao/{hash}', [VotacaoController::class, 'store'])->name('votacao.publica');
+
