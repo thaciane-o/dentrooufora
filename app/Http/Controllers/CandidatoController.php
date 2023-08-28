@@ -15,6 +15,11 @@ class CandidatoController extends Controller
 
     public function store(Request $request)
     {
+        $validarCandidato = $request->validate([
+            'nome' => 'required|string|max:80',
+            'foto' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048', 
+        ]);
+
         $candidato                   = new Candidato();
         $candidato->nome             = $request->nome;
         if ($request->hasFile('foto')) {
@@ -26,7 +31,7 @@ class CandidatoController extends Controller
         }
         $candidato->save();
 
-        return view('/cadastros/candidato');
+        return redirect()->route('alunos.index');
     }
 
 }

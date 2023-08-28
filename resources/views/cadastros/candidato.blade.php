@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -15,10 +16,12 @@
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do candidato">
                             <label for="floatingInput">Nome do candidato</label>
+                            @error('nome') <p style="color: red;">{{ $message }}</p> @enderror
                         </div>
 
                         <div class="input-group mb-3">
                             <input type="file" class="form-control" name="foto" id="foto">
+                            @error('foto') <p style="color: red;">{{ $message }}</p> @enderror
                         </div>
 
                         <button class="btn btn-primary" type="submit" style="margin-top: 10px;">Enviar</button>

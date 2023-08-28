@@ -14,7 +14,8 @@
                     
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do categoria">
-                            <label for="floatingInput">Nome do categoria</label>
+                            <label for="floatingInput">Nome da categoria</label>
+                            @error('nome') <p style="color: red;">{{ $message }}</p> @enderror
                         </div>
 
                         <button class="btn btn-primary" type="submit" style="margin-top: 10px;">Enviar</button>

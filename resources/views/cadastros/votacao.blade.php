@@ -15,6 +15,7 @@
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Título">
                             <label for="floatingInput">Título</label>
+                            @error('titulo') <p style="color: red;">{{ $message }}</p> @enderror
                         </div>
 
                         <div class="form-floating mb-3">
@@ -29,11 +30,13 @@
                         <div class="form-floating mb-3">
                             <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Descrição">
                             <label for="floatingInput">Descrição</label>
+                            @error('descricao') <p style="color: red;">{{ $message }}</p> @enderror
                         </div>
 
                         <div class="form-floating mb-3">
                             <input type="date" class="form-control" name="datahora_inicio" id="datahora_inicio" placeholder="Data de inicio">
                             <label for="floatingInput">Data de inicio</label>
+                            @error('datahora_inicio') <p style="color: red;">{{ $message }}</p> @enderror
                         </div>
 
                         <div class="form-floating mb-3">
@@ -42,12 +45,14 @@
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="number" class="form-control" min="0" max="1" name="publica" id="publica" placeholder="Pública">
+                            <input type="text" class="form-control" name="publica" id="publica" placeholder="Pública">
                             <label for="floatingInput">Pública</label>
+                            @error('publica') <p style="color: red;">{{ $message }}</p> @enderror
                         </div>
 
                         <div class="input-group">
                             <input type="file" class="form-control" name="foto_capa" id="foto_capa" accept="image/*"/>
+                            @error('foto_capa') <p style="color: red;">{{ $message }}</p> @enderror
                         </div>
 
                         <button class="btn btn-primary" type="submit" style="margin-top: 10px;">Enviar</button>

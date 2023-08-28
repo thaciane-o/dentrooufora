@@ -50,6 +50,21 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="card-body">
+                    <h6>Votações abertas:</h6>
+                    
+                    @foreach ($votacaoPublica as $votacao)
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href="{{ route('votacao.publica', ['hash' => $votacao->codigo]) }}">
+                                    {{ $votacao->titulo }}
+                                </a>
+                            </li>
+                        </ul>
+                    @endforeach
+
+                    </div>
                 </div>
             </div>
         </div>

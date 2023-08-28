@@ -20,10 +20,21 @@ class VotacaoController extends Controller
     
     public function store(Request $request)
     {
+        $validarCandidato = $request->validate([
+            'titulo' => 'required|string|max:80',
+            'descricao' => 'nullable|string|max:255', 
+            'publica' => 'required|integer|min:0|max:1',
+            'datahora_inicio' => 'required',
+            'datahora_fim' => 'nullable',
+            'foto_capa' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048'
+        ]);
+
         $randCod = random_int(10000000, 99999999);
+        $hash = md5($randCod);
+        $shortHash = substr($hash, 0, 8);
 
         $votacao                     = new Votacao();
-        $votacao->codigo             = $randCod;
+        $votacao->codigo             = $shortHash;
         $votacao->categoria_id       = $request->categoria_id;
         $votacao->usuario_id         = Auth::id();
         $votacao->titulo             = $request->titulo;
@@ -39,15 +50,8 @@ class VotacaoController extends Controller
             $votacao->foto_capa = $filename;
         }
         $votacao->save();
-
-        $hash = md5($randCod);
-        $candidatosAleatorios = Candidato::inRandomOrder()->limit(2)->get();
-
-        return view('/votacaoPublica', [
-            'hash' => $hash,
-            'candidatos' => $candidatosAleatorios,
-            'votacao' => $votacao
-        ]);
+        
+        return redirect()->route('home');
     }
 
 }

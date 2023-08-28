@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\CandidatoController;
 use App\Http\Controllers\VotacaoController;
-
+use App\Http\Controllers\VotacaoPublicaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,5 +33,5 @@ Route::post('/votacao',         [VotacaoController::class, 'store'])->name('vota
 Route::get('/categoria',        [CategoriaController::class, 'create'])->name('categoria.create');
 Route::post('/categoria',       [CategoriaController::class, 'store'])->name('categoria.store');
 
-Route::get('/votacao/{hash}', [VotacaoController::class, 'store'])->name('votacao.publica');
 
+Route::get('/votacao/{hash}', [VotacaoPublicaController::class, 'show'])->name('votacao.publica');

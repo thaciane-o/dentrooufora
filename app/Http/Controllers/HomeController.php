@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Votacao;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
-    }
+        $votacoes = Votacao::where('publica', 1)->get();
 
+        return view('home', ['votacaoPublica' => $votacoes]);
+    }
 }

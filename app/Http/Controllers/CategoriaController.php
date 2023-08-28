@@ -15,11 +15,15 @@ class CategoriaController extends Controller
 
     public function store(Request $request)
     {
+        $validarCategoria = $request->validate([
+            'nome' => 'required|string|max:80'
+        ]);
+
         $categoria            = new Categoria();
         $categoria->nome      = $request->nome;
         $categoria->save();
 
-        return view('/cadastros/categoria');
+        return redirect()->route('home');
     }
     
 }
