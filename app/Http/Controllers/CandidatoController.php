@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Candidato;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 
 class CandidatoController extends Controller
@@ -10,7 +11,9 @@ class CandidatoController extends Controller
     
     public function create()
     {
-        return view('/cadastros/candidato');
+        return view('/cadastros/candidato', [
+            'categorias' => Categoria::all()
+        ]);
     }
 
     public function store(Request $request)
@@ -31,7 +34,7 @@ class CandidatoController extends Controller
         }
         $candidato->save();
 
-        return redirect()->route('alunos.index');
+        return redirect()->route('home');
     }
 
 }

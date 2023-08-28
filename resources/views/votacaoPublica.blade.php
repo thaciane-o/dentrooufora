@@ -10,7 +10,7 @@
                 <img 
                     src="{{ asset('uploads/' . $votacao->foto_capa) }}"
                     alt="Capa"
-                    style="width: 100%;"
+                    style="width: 100%; height: 300px;"
                 >
 
                 <div class="card-body">
