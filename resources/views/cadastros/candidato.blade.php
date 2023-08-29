@@ -20,18 +20,6 @@
                         </div>
 
                         <div class="input-group mb-3">
-                            <div class="input-group-pretend">
-                                <label for="categoria_id" class="input-group-text">Categoria:</label>
-                            </div>
-                    
-                            <select class="form-select" name="categoria_id" id="categoria_id" multiple>
-                                @foreach ($categorias as $categoria)
-                                    <option value="{{ $categoria->id }}">{{ $categoria->nome }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <div class="input-group mb-3">
                             <input type="file" class="form-control" name="foto" id="foto">
                             @error('foto') <p style="color: red;">{{ $message }}</p> @enderror
                         </div>

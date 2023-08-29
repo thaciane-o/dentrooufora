@@ -7,11 +7,19 @@
             <div class="card">
                 <div class="card-header">{{ $votacao->titulo }}</div>
             
-                <img 
-                    src="{{ asset('uploads/' . $votacao->foto_capa) }}"
-                    alt="Capa"
-                    style="width: 100%; height: 300px;"
-                >
+                @if($votacao->foto_capa && file_exists(public_path('uploads/' . $votacao->foto_capa)))
+                    <img 
+                        src="{{ asset('uploads/' . $votacao->foto_capa) }}"
+                        alt="Capa"
+                        style="width: 100%; height: 300px;"
+                    >
+                @else
+                    <img 
+                        src="{{ $votacao->foto_capa }}"
+                        alt="Capa"
+                        style="width: 100%; height: 300px;"
+                    >
+                @endif
 
                 <div class="card-body">
                     <p style="text-align: center;">{{ $votacao->descricao }}</p>
@@ -27,6 +35,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title text-center">{{ $candidato->nome }}</h5>
                                 </div>
+                                <button class="btn btn-primary" style="margin-top: 10px;">Votar</button>
                             </div>
                         @endforeach
                     </div>

@@ -20,7 +20,7 @@ class VotacaoController extends Controller
     
     public function store(Request $request)
     {
-        $validarCandidato = $request->validate([
+        $validarVotacao = $request->validate([
             'titulo' => 'required|string|max:80',
             'descricao' => 'nullable|string|max:255', 
             'publica' => 'required|integer|min:0|max:1',

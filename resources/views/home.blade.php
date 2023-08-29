@@ -14,8 +14,8 @@
                         </div>
                     @endif
                     
-                    <div style="display: flex; flex-direction: row;">
-                        <div class="card" style="width: 18rem;  margin-right: 10px;">
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+                        <div class="card" style="width: 18rem;">
                             <img 
                                 src="https://intelectua.com.br/sites/default/files/styles/large/public/76815-voce-realmente-sabe-o-que-e-desenvolvimento-web-entregar-em-2203.jpg?itok=XU9FDXQJ" 
                                 class="card-img-top" 
@@ -27,7 +27,7 @@
                                 <a href="/candidato" class="btn btn-primary">Entrar</a>
                             </div>
                         </div>
-                        <div class="card" style="width: 18rem; margin-right: 10px;">
+                        <div class="card" style="width: 18rem; margin-left: 10px;">
                             <img 
                                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZbF0AbfYsOlBc76phvjnPS29C-vto_o3mwKmmFSIdHWNzjG9uU0l8RRHnNGHDsQz7S4o&usqp=CAU"
                                 class="card-img-top" 
@@ -38,7 +38,7 @@
                                 <a href="/votacao" class="btn btn-primary">Entrar</a>
                             </div>
                         </div>
-                        <div class="card" style="width: 18rem;">
+                        <div class="card" style="width: 18rem; margin-top: 10px; margin-right: 10px;">
                             <img 
                                 src="https://149504724.v2.pressablecdn.com/wp-content/uploads/2017/08/websites.jpg" 
                                 class="card-img-top" 
@@ -47,6 +47,17 @@
                                 <h5 class="card-title">Cadastre categoria</h5>
                                 <p class="card-text">Aqui você vai criar as categorias que vão compor as votações.</p>
                                 <a href="/categoria" class="btn btn-primary">Entrar</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem; margin-top: 10px;">
+                            <img 
+                                src="https://jesielviana.vercel.app/static/images/posts/banner-nodejs.png" 
+                                class="card-img-top" 
+                                alt="Candidatos e categorias">
+                            <div class="card-body">
+                                <h5 class="card-title">Insira categorias para candidatos</h5>
+                                <p class="card-text">Aqui você vai inserir as categorias que o candidato terá.</p>
+                                <a href="/categoriaCandidato" class="btn btn-primary">Entrar</a>
                             </div>
                         </div>
                     </div>
